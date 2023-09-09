@@ -1,6 +1,6 @@
 # setup docker
 
-docker run --gpus all --shm-size=30g --name mytf1 -it -v $PWD:/home/od tensorflow/tensorflow:1.14.0-gpu-py3 /bin/bash
+docker run --gpus all --shm-size=30g --name mytf1 -it -v $PWD:/mrcnn tensorflow/tensorflow:1.14.0-gpu-py3 /bin/bash
 docker exec -it mytf1 /bin/bash
 
 # Install TensorFlow Object Detection API.
