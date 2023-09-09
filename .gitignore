@@ -2,6 +2,7 @@
 *.tar
 *.gz
 *.zip
+
 # model files
 *.h5
 *.pb
@@ -13,3 +14,6 @@
 *.onnx
 *.xml
 *.bin
+
+#tensorflow-models
+models
