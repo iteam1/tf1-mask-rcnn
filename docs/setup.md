@@ -39,11 +39,10 @@
 
 - build `pycocotools`:
 
-        cd coco/PythonAPI
-        make
-        sudo make install
-        sudo python setup.py install
-
+        cd coco/PythonAPI && \
+        make && \
+        make install && \
+        python setup.py install
 
 *Note:*
 
