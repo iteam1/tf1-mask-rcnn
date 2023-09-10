@@ -29,7 +29,9 @@
 - visualize tfrecord `python3 scripts/visualize_tfrecord.py dataset/train.record dataset/labelmap.pbtxt`
 
 # train model
-CUDA_VISIBLE_DEVICES=1 python models/research/object_detection/model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=mask_rcnn_inception_v2_coco.config
+- export `PYTHONPATH`: `export PYTHONPATH="/mrcnn/models/research"` and `export PYTHONPATH="/mrcnn/models/research/slim"`
+
+        python models/research/object_detection/model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=dataset/mask_rcnn_inception_v2_coco.config
 
 # export model
 CUDA_VISIBLE_DEVICES=1 python models/research/object_detection/export_inference_graph.py \
