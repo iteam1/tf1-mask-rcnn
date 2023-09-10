@@ -1,7 +1,5 @@
 # setup docker
-- pull docker: `docker pull tensorflow/tensorflow:1.14.0-gpu-py3`
-
-- pull docker: `docker pull tensorflow/tensorflow:1.15.5-gpu-py3`
+- pull `tensorflow v1` docker image: `docker pull tensorflow/tensorflow:1.14.0-gpu-py3` or `docker pull tensorflow/tensorflow:1.15.5-gpu-py3`
 
 - build docker container name `mytf1`, mount your working directory to folder `mrcnn` inside container: `docker run --gpus all --shm-size=30g --name mytf1 -it -v $PWD:/mrcnn <YOUR_DOCKER_IMAGE_NAME> /bin/bash`, example: `docker run --gpus all --shm-size=30g --name mytf1 -it -v $PWD:/mrcnn tensorflow/tensorflow:1.15.5-gpu-py3 /bin/bash`
 
@@ -14,13 +12,13 @@
 - remove docker image by command `docker rmi <YOUR_DOCKER_IMAGE_NAME>`
 
 # Install TensorFlow Object Detection API.
+- clone source code `tensorflow object-detection` on branch `r1.13.0` (*You can do this command outside the container*): `git clone -b r1.13.0 --single-branch https://github.com/tensorflow/models.git`
+
 - go inside docker container by command: `docker exec -it mytf1 /bin/bash`
 
 - check gpu and container connection `nvidia-smi`
 
 - install essential packages `pip install --upgrade pip setuptools wheel`
-
-- clone source code `tensorflow object-detection` on branch `r1.13.0` (*You can do this command outside the container*): `git clone -b r1.13.0 --single-branch https://github.com/tensorflow/models.git`
 
 - install protobuf compiler: `apt install protobuf-compiler`
 
@@ -34,9 +32,9 @@
 
 - install `object-detection` by `setup.py` file: `python -m pip install .`
 
-- install `keras` package: `pip install keras==2.1.6`
+- export `PYTHONPATH`: `export PYTHONPATH="/mrcnn/models/research"` and `export PYTHONPATH="/mrcnn/models/research/slim"`
 
-- test your installation: `python object_detection/builders/model_builder_tf1_test.py`
+- test your installation: `python object_detection/builders/model_builder_test.py`
 
 *Note:*
 
