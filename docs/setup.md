@@ -22,11 +22,9 @@
 
 - install protobuf compiler: `apt install protobuf-compiler`
 
-- go to directory `research`: `cd models/research`
+- go to directory `research` directory: `cd models/research`
 
 - compile protoc file to python file: `protoc object_detection/protos/*.proto --python_out=.`
-
-- copy setup.py file to outside: `cp object_detection/packages/tf1/setup.py .`
 
 - install `opencv-python`: `pip install opencv-python==4.1.2.30`
 
@@ -43,6 +41,8 @@ Error:
         File "/usr/local/lib/python3.6/dist-packages/object_detection/models/keras_models/resnet_v1.py", line 21, in <module>
             from keras.applications import resnet
         ImportError: cannot import name 'resnet'
+
+change line 21 `/usr/local/lib/python3.6/dist-packages/object_detection/models/keras_models/resnet_v1.py` from `from keras.applications import resnet` to `from keras.applications import resnet50 as resnet`
 
 Keras versions:
 
