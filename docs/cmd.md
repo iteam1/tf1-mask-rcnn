@@ -28,10 +28,9 @@
 
 - visualize tfrecord `python3 scripts/visualize_tfrecord.py dataset/train.record dataset/labelmap.pbtxt`
 
-# train model
-- export `PYTHONPATH`: `export PYTHONPATH="/mrcnn/models/research"` and `export PYTHONPATH="/mrcnn/models/research/slim"`
+- export `PYTHONPATH`: `export PYTHONPATH="/mrcnn/models/research" && export PYTHONPATH="/mrcnn/models/research/slim"`
 
-        python models/research/object_detection/model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=dataset/mask_rcnn_inception_v2_coco.config
+- train model: `python models/research/object_detection/model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=dataset/mask_rcnn_inception_v2_coco.config`
 
 # export model
 CUDA_VISIBLE_DEVICES=1 python models/research/object_detection/export_inference_graph.py \
@@ -40,9 +39,3 @@ CUDA_VISIBLE_DEVICES=1 python models/research/object_detection/export_inference_
 --trained_checkpoint_prefix checkpoints/model.ckpt-163085 --output_directory inference_graph
 
 CUDA_VISIBLE_DEVICES=1 python models/research/object_detection/model_main.py --logtostderr --model_dir=training_crackline/ --pipeline_config_path=crack_line.config
-
-*Note*
-
-        File "/usr/local/lib/python3.6/dist-packages/qtpy/QtGui.py", line 30, in <module>
-            from PyQt5.QtGui import *
-        ImportError: libGL.so.1: cannot open shared object file: No such file or directory
