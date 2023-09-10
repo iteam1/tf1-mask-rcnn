@@ -34,6 +34,19 @@
 
 - test your installation: `python object_detection/builders/model_builder_test.py`
 
+# Install pycocoapi
+
+- clone `cocoapi` (*You can do this command outside the container*): `git clone --depth 1 https://github.com/cocodataset/cocoapi.git`
+
+- `cd cocoapi/PythonAPI`
+
+- build `pycocotools`:
+
+        make -j8 && \
+        cp -r pycocotools models/research && \
+        cd ../../ && \
+        rm -rf cocoapi
+    
 *Note:*
 
 Error:

@@ -1,14 +1,18 @@
-# convert labelme3.0 to coco
-python3 scripts/labelme3_labelme.py dataset/train
-python3 scripts/labelme3_labelme.py dataset/test
+- install `labelme`: `pip install labelme`
 
-*Note: Outside the docker
+- `apt-get install -y libgl1-mesa-dev && apt-get install -y libglib2.0-0`
 
-python3 scripts/labelme2coco.py dataset/train \
---output dataset/train.json
+- `pip install contextlib2`
 
-python3 scripts/labelme2coco.py dataset/test \
---output dataset/test.json
+- convert the labelme labels training set into COCO format:
+
+        python3 scripts/labelme2coco.py dataset/train \
+        --output dataset/train.json
+
+- convert the labelme labels training set into COCO format:
+
+        python3 scripts/labelme2coco.py dataset/test \
+        --output dataset/test.json
 
 *Note: Inside docker
 
@@ -33,3 +37,9 @@ CUDA_VISIBLE_DEVICES=1 python models/research/object_detection/export_inference_
 --trained_checkpoint_prefix checkpoints/model.ckpt-163085 --output_directory inference_graph
 
 CUDA_VISIBLE_DEVICES=1 python models/research/object_detection/model_main.py --logtostderr --model_dir=training_crackline/ --pipeline_config_path=crack_line.config
+
+*Note*
+
+        File "/usr/local/lib/python3.6/dist-packages/qtpy/QtGui.py", line 30, in <module>
+            from PyQt5.QtGui import *
+        ImportError: libGL.so.1: cannot open shared object file: No such file or directory
