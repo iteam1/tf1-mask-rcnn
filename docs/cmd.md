@@ -4,6 +4,8 @@
 
 - `pip install contextlib2`
 
+- `pip install IPython`
+
 - convert the labelme labels training set into COCO format:
 
         python3 scripts/labelme2coco.py dataset/train \
@@ -11,8 +13,8 @@
 
 - convert the labelme labels training set into COCO format:
 
-        python3 scripts/labelme2coco.py dataset/test \
-        --output dataset/test.json
+        python3 scripts/labelme2coco.py dataset/val \
+        --output dataset/val.json
 
 *Note: Inside docker
 
