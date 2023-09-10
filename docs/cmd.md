@@ -1,10 +1,9 @@
-- install `labelme`: `pip install labelme`
+- install required packages: 
 
-- `apt-get install -y libgl1-mesa-dev && apt-get install -y libglib2.0-0`
-
-- `pip install contextlib2`
-
-- `pip install IPython`
+        pip install labelme
+        apt-get install -y libgl1-mesa-dev && apt-get install -y libglib2.0-0
+        pip install contextlib2
+        pip install IPython
 
 - convert the labelme labels training set into COCO format:
 
@@ -18,16 +17,16 @@
 
 *Note: Inside docker
 
-# export tfrecord
-python scripts/create_coco_tf_record.py --logtostderr \
---train_image_dir=dataset/train_img \
---test_image_dir=dataset/test_img \
---train_annotations_file=dataset/train.json \
---test_annotations_file=dataset/test.json \
---output_dir=dataset
+- export tfrecord
 
-# visualize tfrecord
-python3 scripts/visualize_tfrecord.py dataset/train.record dataset/labelmap.pbtxt
+        python scripts/create_coco_tf_record.py --logtostderr \
+        --train_image_dir=dataset/train_img \
+        --test_image_dir=dataset/val_img \
+        --train_annotations_file=dataset/train.json \
+        --test_annotations_file=dataset/val.json \
+        --output_dir=dataset
+
+- visualize tfrecord `python3 scripts/visualize_tfrecord.py dataset/train.record dataset/labelmap.pbtxt`
 
 # train model
 CUDA_VISIBLE_DEVICES=1 python models/research/object_detection/model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=mask_rcnn_inception_v2_coco.config
