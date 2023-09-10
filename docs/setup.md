@@ -35,7 +35,7 @@
 - test your installation: `python object_detection/builders/model_builder_test.py`
 
 # Install pycocoapi
-- clone coco(*Already built-in*): `git clone https://github.com/pdollar/coco.git`
+- clone coco: `git clone https://github.com/pdollar/coco.git`
 
 - build `pycocotools`:
 
