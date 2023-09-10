@@ -20,8 +20,7 @@
 
 - install essential packages `pip install --upgrade pip setuptools wheel`
 
-
-git clone https://github.com/tensorflow/models.git
+- clone source code `tensorflow object-detection`: `git clone https://github.com/tensorflow/models.git`
 
 docker exec -it <your_container> bin/bash
 
