@@ -9,6 +9,8 @@ train mark-rcnn tensorflow v1
 - train, export model and inference: [here](docs/cmd.md)
 
 # references
+https://github.com/tensorflow/models/tree/master
+
 https://github.com/TannerGilbert/Tensorflow-Object-Detection-API-train-custom-Mask-R-CNN-model/tree/tf1
 
 https://hub.docker.com/r/tensorflow/tensorflow/tags
