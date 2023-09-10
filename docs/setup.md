@@ -30,7 +30,7 @@
 
 - install `object-detection` by `setup.py` file: `python -m pip install .`
 
-- export `PYTHONPATH`: `export PYTHONPATH="/mrcnn/models/research"` and `export PYTHONPATH="/mrcnn/models/research/slim"`
+- export `PYTHONPATH`: `export PYTHONPATH="/mrcnn/models/research" && export PYTHONPATH="/mrcnn/models/research/slim"`
 
 - test your installation: `python object_detection/builders/model_builder_test.py`
 
