@@ -39,3 +39,16 @@
         --input_type image_tensor \
         --pipeline_config_path mask_rcnn_inception_v2_coco.config \
         --trained_checkpoint_prefix training/model.ckpt-xxx --output_directory inference_graph
+
+*Note* If you got error:
+
+        File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/client/session.py", line 693, in __init__
+            self._session = tf_session.TF_NewSessionRef(self._graph._c_graph, opts)
+        tensorflow.python.framework.errors_impl.InvalidArgumentError: Invalid device ordinal value (1). Valid range is [0, 0].
+        	while setting up XLA_GPU_JIT device number 1
+
+Add bellow commands to `models/research/object_detection/export_inference_graph.py`
+
+        import os
+        os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+        os.environ["CUDA_VISIBLE_DEVICES"] = "0" #(or "1" or "2")
