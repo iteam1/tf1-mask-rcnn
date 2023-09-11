@@ -1,8 +1,6 @@
 - install required packages: 
 
         pip install labelme && \
-        apt-get update && \
-        apt-get install -y libgl1-mesa-dev && apt-get install -y libglib2.0-0 && \
         pip install contextlib2 && \
         pip install IPython
 
