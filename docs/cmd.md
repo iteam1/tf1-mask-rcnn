@@ -40,7 +40,11 @@
         --pipeline_config_path mask_rcnn_inception_v2_coco.config \
         --trained_checkpoint_prefix training/model.ckpt-xxx --output_directory inference_graph
 
-*Note* If you got error:
+*Note* 
+If you got error: `ImportError: libGL.so.1: cannot open shared object file: No such file or directory`
+Run command: `apt-get install -y libgl1-mesa-dev` and `apt-get install -y libglib2.0-0`
+
+If you got error:
 
         File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/client/session.py", line 693, in __init__
             self._session = tf_session.TF_NewSessionRef(self._graph._c_graph, opts)
