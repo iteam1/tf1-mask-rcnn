@@ -38,6 +38,7 @@
         --pipeline_config_path mask_rcnn_inception_v2_coco.config \
         --trained_checkpoint_prefix training/model.ckpt-xxx --output_directory inference_graph
 
+test exported model: `python scripts/test_tf.py` or `python scripts/test_tf.py`
 *Note* 
 If you got error: `ImportError: libGL.so.1: cannot open shared object file: No such file or directory`
 Run command: `apt-get install -y libgl1-mesa-dev` and `apt-get install -y libglib2.0-0`
