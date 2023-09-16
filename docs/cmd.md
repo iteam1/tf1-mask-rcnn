@@ -2,7 +2,11 @@
 
         pip install labelme && \
         pip install contextlib2 && \
-        pip install IPython
+        pip install IPython && \
+        apt-get update && apt-get install ffmpeg libsm6 libxext6  -y && \
+        apt-get update && apt-get install libgl1 && \
+        apt-get install -y libgl1-mesa-dev && \
+        apt-get install -y libglib2.0-0
 
 - convert the labelme labels training set into COCO format:
 
@@ -29,7 +33,7 @@
 
 - export `PYTHONPATH`: `export PYTHONPATH="/mrcnn/models/research" && export PYTHONPATH="/mrcnn/models/research/slim"`
 
-- train model: `python models/research/object_detection/model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=dataset/mask_rcnn_inception_v2_coco.config`
+- train model: `CUDA_VISIBLE_DEVICES=0 python models/research/object_detection/model_main.py --logtostderr --model_dir=training/ --pipeline_config_path=dataset/mask_rcnn_inception_v2_coco.config`
 
 - export model
 

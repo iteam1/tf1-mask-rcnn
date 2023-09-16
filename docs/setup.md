@@ -5,7 +5,7 @@
                 tensorflow/tensorflow   1.13.2-gpu-py3   b5408c35298a   4 years ago    3.35GB
                 tensorflow/tensorflow   1.14.0-gpu-py3   a7a1861d2150   4 years ago    3.51GB
 
-- build docker container name `mytf1`, mount your working directory to folder `mrcnn` inside container: `docker run --gpus all --shm-size=30g --name mytf1 -it -v $PWD:/mrcnn <YOUR_DOCKER_IMAGE_NAME> /bin/bash`, example: `docker run --gpus all --shm-size=30g --name mytf1 -it -v $PWD:/mrcnn tensorflow/tensorflow:1.15.5-gpu-py3 /bin/bash`
+- build docker container name `mytf1`, mount your working directory to folder `mrcnn` inside container: `docker run --gpus all --shm-size=30g --name mytf1 -it -v $PWD:/mrcnn <YOUR_DOCKER_IMAGE_NAME> /bin/bash`, example: `sudo docker run --gpus all --shm-size=30g --name mytf1 -it -v $PWD:/mrcnn tensorflow/tensorflow:1.14.0-gpu-py3 /bin/bash`
 
 - start docker container by command: `docker start -it mytf1`
 
